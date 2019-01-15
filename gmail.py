@@ -5,8 +5,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 import time
    
-fromaddr = "servicemailurath@gmail.com"
-toaddr = "achyuthuni.venkata.sidhartha@gmail.com"
+fromaddr = "sender mail id"
+toaddr = "reciever mail id"
    
 # instance of MIMEMultipart 
 msg = MIMEMultipart() 
@@ -27,8 +27,8 @@ body = "The following person tried to intrude through your security systems"
 msg.attach(MIMEText(body, 'plain')) 
   
 # open the file to be sent  
-filename = "udf.jpg"
-attachment = open("unidentified/udf.jpg", "rb") 
+filename = "unidentified photo name"
+attachment = open("unidentified photo path", "rb") 
   
 # instance of MIMEBase and named as p 
 p = MIMEBase('application', 'octet-stream') 
@@ -51,7 +51,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
   
 # Authentication 
-s.login(fromaddr, 'sservicemailurath123') 
+s.login(fromaddr, 'password of from address') 
   
 # Converts the Multipart msg into a string 
 text = msg.as_string() 
