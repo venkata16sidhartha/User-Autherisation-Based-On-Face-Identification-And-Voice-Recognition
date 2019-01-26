@@ -3,11 +3,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText 
 from email.mime.base import MIMEBase 
 from email import encoders
+import geocoder
 import time
    
 fromaddr = "sender mail id"
 toaddr = "reciever mail id"
-   
+g=geocoder.ip('me')
+loc=g.latlng
 # instance of MIMEMultipart 
 msg = MIMEMultipart() 
   
@@ -18,7 +20,7 @@ msg['From'] = fromaddr
 msg['To'] = toaddr 
   
 # storing the subject  
-msg['Subject'] = "Intruder in your security systems at ",time.time
+msg['Subject'] = "Intruder in your security systems at ",time.time,"and in this location",loc"
   
 # string to store the body of the mail 
 body = "The following person tried to intrude through your security systems"
